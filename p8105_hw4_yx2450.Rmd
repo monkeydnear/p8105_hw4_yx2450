@@ -15,11 +15,10 @@ library(readxl)
 ```{r}
 pups_data = read_csv("../data/data_import_examples/FAS_pups.csv", col_types = "ciiiii") %>% 
   clean_names() %>% 
-  mutate(sex = recode(sex, `1` = "male", `2` = "female")) %>% 
-  mutate(PD_outcome = pd_ears + pd_eyes + pd_pivot + pd_walk) %>% 
-  drop_na()
+  mutate(sex = recode(sex, `1` = "male", `2` = "female"))
 
-pups_tidy_data = gather(pups_data, key = pd, value = days, pd_ears: PD_outcome)
+pups_tidy_data = gather(pups_data, key = PD_outcome, value = days, pd_ears: pd_walk) %>% 
+  drop_na()
 ```
 
 
