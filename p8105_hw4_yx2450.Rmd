@@ -1,0 +1,36 @@
+---
+title: "p8105_hw4_yx2450"
+output: html_document
+---
+
+In Problems 1 and 2, I worked with Manqi Cai (UNI: mc4433).
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(readxl)
+```
+
+### Problem 1
+```{r}
+pups_data = read_csv("../data/data_import_examples/FAS_pups.csv", col_types = "ciiiii") %>% 
+  clean_names() %>% 
+  mutate(sex = recode(sex, `1` = "male", `2` = "female")) %>% 
+  mutate(PD_outcome = pd_ears + pd_eyes + pd_pivot + pd_walk) %>% 
+  drop_na()
+
+pups_tidy_data = gather(pups_data, key = pd, value = days, pd_ears: PD_outcome)
+```
+
+
+The GitHub repo containing our solution to this problem is [here](https://github.com/jeff-goldsmith/vbvs.concurrent).
+
+
+### Problem 2
+
+The GitHub repo containing the solution to this problem is [here](https://github.com/julia-wrobel/depthTests)
+
+
+### Problem 3
+
+My personal website is [here](http://jeffgoldsmith.com)
