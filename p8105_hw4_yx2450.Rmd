@@ -21,6 +21,17 @@ pups_tidy_data = gather(pups_data, key = PD_outcome, value = days, pd_ears: pd_w
   drop_na()
 ```
 
+The collaborator will create a plot showing the distribution of post-natal days for each developmental landmark.
+```{r}
+#a plot showing the distribution of post-natal days for each developmental landmark.
+
+pups_tidy_data %>% 
+  group_by(PD_outcome) %>% 
+  ggplot(aes(x = litter_number, y = days, color = PD_outcome)) +
+  geom_point(alpha = .4) +
+  facet_grid(. ~PD_outcome)
+
+```
 
 The GitHub repo containing our solution to this problem is [here](https://github.com/jeff-goldsmith/vbvs.concurrent).
 
