@@ -27,13 +27,20 @@ pups_tidy_data = gather(pups_data, key = PD_outcome, value = days, pd_ears: pd_w
 The collaborator will create a plot showing the distribution of post-natal days for each developmental landmark.
 ```{r}
 #a plot showing the distribution of post-natal days for each developmental landmark.
-
+#plot a scatter plot for distribution of post-natal days for each developmental landmark.
 pups_tidy_data %>% 
   group_by(PD_outcome) %>% 
   ggplot(aes(x = litter_number, y = days, color = PD_outcome)) +
   geom_point(alpha = .4) +
-  facet_grid(. ~PD_outcome)
+  facet_grid(. ~PD_outcome)+
+  theme_bw()
 
+
+#plot a density plot for distribution of post-natal days for each developmental landmark.
+pups_tidy_data %>%
+  ggplot(aes(x = days, y = PD_outcome, color = PD_outcome)) +
+  geom_density_ridges(aes(color = PD_outcome), scale = .75)+
+  theme_bw()
 
 ```
 
