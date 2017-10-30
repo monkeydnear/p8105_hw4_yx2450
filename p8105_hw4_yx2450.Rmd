@@ -43,6 +43,8 @@ pups_tidy_data %>%
   theme_bw()
 
 ```
+From the plots depicted above, we can see that the post-natal days for pd_ears, pd_eyes, pd_pivot and pd_walk are centralized around 3-5, 12-14, 5-8, and 8-11. 
+
 
 The GitHub repo containing our solution to this problem is [here](https://github.com/jeff-goldsmith/vbvs.concurrent).
 
