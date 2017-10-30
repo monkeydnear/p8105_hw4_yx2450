@@ -16,7 +16,7 @@ library(pander)
 
 ### Problem 1
 ```{r}
-pups_data = read_csv("../data/data_import_examples/FAS_pups.csv", col_types = "ciiiii") %>% 
+pups_data = read_csv("./data/FAS_pups.csv", col_types = "ciiiii") %>% 
   clean_names() %>% 
   mutate(sex = recode(sex, `1` = "male", `2` = "female"))
 
