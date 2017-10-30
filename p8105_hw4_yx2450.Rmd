@@ -9,6 +9,9 @@ In Problems 1 and 2, I worked with Manqi Cai (UNI: mc4433).
 library(tidyverse)
 library(janitor)
 library(readxl)
+library(ggridges)
+library(ggthemes)
+library(pander)
 ```
 
 ### Problem 1
@@ -30,6 +33,7 @@ pups_tidy_data %>%
   ggplot(aes(x = litter_number, y = days, color = PD_outcome)) +
   geom_point(alpha = .4) +
   facet_grid(. ~PD_outcome)
+
 
 ```
 
